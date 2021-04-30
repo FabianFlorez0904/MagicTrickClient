@@ -22,37 +22,24 @@ def buscarCarta(numCarta):
         if carta.getNumCarta() == numCarta:
             return carta
 
-def pregunta(carta,numCarta):
+def pregunta():
     while True:
         print(
             "-------------------------------------------------\n",
             "{: ^50}\n".format("¿Tu carta esta en esta carta?")
         )
         respuesta = input("{: >25}".format("[y/n]-->"))
-        if carta.encontrarCarta(numCarta):
-            if respuesta == 'y' or respuesta == 'Y':
-                return '1'
-            elif respuesta == 'n' or respuesta == 'N':
-                print(
-                    "-------------------------------------------------\n",
-                    "{: ^50}\n".format("¿Estas seguro que no esta?, dale otro vistazo")
-                )
-                continue
+        if respuesta == 'y' or respuesta == 'Y':
+            return '1'
+        elif respuesta == 'n' or respuesta == 'N':
+            return '0'
         else:
-            if respuesta == 'n' or respuesta == 'N':
-                return '0'
-            elif respuesta == 'y' or respuesta == 'Y':
-                print(
-                    "-------------------------------------------------\n",
-                    "{: ^50}\n".format("¿Estas seguro que esta?, dale otro vistazo")
-                )
-                continue
-
-def mostrarCartas(ip,numeroUsuario):
-    for i in range(1,7):
+            continue
+def mostrarCartas(ip):
+    for i in range(1,8):
         carta = buscarCarta(i)
         carta.imprimirCarta()
-        resultado = pregunta(carta, numeroUsuario)
+        resultado = pregunta()
         enviar(ip, resultado)
         clear()
     return recibirNumeroMagico(ip)
@@ -63,9 +50,8 @@ def iniciarPartida():
     ipservidor = input("Ingresa la ip del servidor\n-->")
     if isConected(ipservidor):
         mensajeServidorEncontrado()
-        numeroUsuario = seleccionNumeroUsuario()
-        mensajeNumeroUsuario(numeroUsuario)
-        numeroRecibido = mostrarCartas(ipservidor,numeroUsuario)
+        mensajeNumeroUsuario()
+        numeroRecibido = mostrarCartas(ipservidor)
         mostrarCartaUsuario(numeroRecibido)
         return ipservidor    
     elif not isConected(ipservidor):

@@ -19,13 +19,13 @@ def main():
                 continue
             elif opcion == 3:
                 terminar()
-                cerrarConexion()
+                cerrarConexion(ip)
                 break
             else:
-                opcionNoEncontrada(ip)
+                opcionNoEncontrada()
         except ValueError:
             opcionNoEncontrada()
         except Exception as e:
-             print(type(e).__name__)
+            print(type(e).__name__)
 #   Llamado del main
 main()

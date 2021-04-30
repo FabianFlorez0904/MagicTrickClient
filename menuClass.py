@@ -159,12 +159,12 @@ def mensajeCartaFueraRango():
     tiempo(1)
     clear()
 
-def mensajeNumeroUsuario(numero):
-    carta = 'Tu carta: '+str(numero)
+def mensajeNumeroUsuario():
     print(
         "-------------------------------------------------\n",
+        "{: ^50}\n".format("Escoje un numero entre 0 y 100"),
         "{: ^50}\n".format("Memoriza tu carta, y no la olvides"),
-        "{: ^50}\n".format(carta),
+        "{: ^50}\n".format('Tu carta es secreta'),
         "-------------------------------------------------\n",sep=""
     )
     tiempo(3)
