@@ -21,7 +21,18 @@ class cartaClass():
                 j += 1
             print("\n-------------------------------------------------\n")
             break
+    def getNumCarta(self):
+        return self.numCarta
+    
+    def getCartas(self):
+        return self.cartas
 
+    def encontrarCarta(self,numeroDeCarta):
+        if numeroDeCarta in self.cartas:
+            return True
+        else:
+            return False
+        
 cartaUno = cartaClass(
     "Carta 1",
     1,

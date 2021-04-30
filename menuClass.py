@@ -1,6 +1,7 @@
 import os, time
 
 def clear():
+    # Esta funcion Limpia la pantalla en tiempo de ejecucion
     os.system("cls")
 
 def tiempo(t):
@@ -8,6 +9,7 @@ def tiempo(t):
     time.sleep(t)
 
 def imprimirMenu():
+    clear()
     print("-------------------------------------------------\n",
         "{: ^50}\n".format('╔══╗            ',),
         "{: ^50}\n".format('╚╗╔╬╦╦╦═╦═╗     ',),
@@ -26,7 +28,7 @@ def imprimirMenu():
     )
 
 def terminar():
-    #clear()
+    clear()
     print(
         "-------------------------------------------------\n",
         "{: ^50}\n".format("              __                "),
@@ -52,17 +54,17 @@ def terminar():
         "-------------------------------------------------\n", sep=''
     )
     tiempo(3)
-    #clear()
+    clear()
 
 def opcionNoEncontrada():
-    #clear()
+    clear()
     print("-------------------------------------------------\n",
         "{: ^50}\n".format("Opcion no encontrada"),
         "-------------------------------------------------\n", sep='')
     tiempo(1)          
 
 def creditos():
-    #clear()
+    clear()
     print("-------------------------------------------------",
         '───────────────────────────────────────',
         '───▐▀▄───────▄▀▌───▄▄▄▄▄▄▄─────────────',
@@ -88,10 +90,10 @@ def creditos():
     tiempo(2)
 
 def bienvenida():
-    #clear()
+    clear()
     imprimirCorazon()
     tiempo(2)
-    #clear()
+    clear()
 
 def imprimirCorazon():
     print(
@@ -134,6 +136,8 @@ def mensajeServidorNoEncontrado():
         "{: ^50}\n".format("Intenta nuevamente"),
         "-------------------------------------------------\n",sep=""
     )
+    tiempo(3)
+    clear()
 
 def mensajeServidorEncontrado():
     print(
@@ -143,7 +147,7 @@ def mensajeServidorEncontrado():
         "-------------------------------------------------\n",sep=""
     )
     tiempo(2)
-    #clear()
+    clear()
 
 def mensajeCartaFueraRango():
     print(
@@ -153,7 +157,7 @@ def mensajeCartaFueraRango():
         "-------------------------------------------------\n",sep=""
     )
     tiempo(1)
-    ##clear()
+    clear()
 
 def mensajeNumeroUsuario(numero):
     carta = 'Tu carta: '+str(numero)
@@ -164,4 +168,56 @@ def mensajeNumeroUsuario(numero):
         "-------------------------------------------------\n",sep=""
     )
     tiempo(3)
+    clear()
+
+def mostrarCartaUsuario(numero):
+    mostrarMago(numero)
+    print("{: ^50}\n".format("Ya lo pensé, y tu carta es"),
+        "{: ^50}\n".format(numero),
+        "-------------------------------------------------\n",sep=""
+    )
+    tiempo(7)
+
+def mostrarMago(numero):
+    clear()
+    print(
+        "-------------------------------------------------\n",
+        "{: ^50}\n".format("              _,._      "),
+        "{: ^50}\n".format("  .||,        /_ _\ \   "),
+        "{: ^50}\n".format(" \.`',/       |'L'| |   "),
+        "{: ^50}\n".format(" = {: >3} =      | -,| L   ".format(numero)),
+        "{: ^50}\n".format(" / || \    ,-'\ /,'`.   "),
+        "{: ^50}\n".format("   ||     ,'   `,,. `.  "),
+        "{: ^50}\n".format("   ,|____,' , ,;' \| |  "),
+        "{: ^50}\n".format("  (3|\    _/|/'   _| |  "),
+        "{: ^51}\n".format("   ||/,-''  | >-'' _,\ \ "),
+        "{: ^50}\n".format("   ||'      ==\ ,-'  ,' "),
+        "{: ^50}\n".format("   ||       |  V \ ,|   "),
+        "{: ^50}\n".format("   ||       |    |` |   "),
+        "{: ^50}\n".format("   ||       |    |   \  "),
+        "{: ^50}\n".format("   ||       |    \    \ "),
+        "{: ^51}\n".format("   ||       |     |    \ "),
+        "{: ^50}\n".format("   ||       |      \_,-'"),
+        "{: ^51}\n".format('   ||       |___,,--")_\ '),
+        "{: ^50}\n".format("   ||         |_|   ccc/"),
+        "{: ^50}\n".format("   ||        ccc/       "),
+        "{: ^50}\n".format("   ||                   "),
+        "-------------------------------------------------\n", sep=''
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

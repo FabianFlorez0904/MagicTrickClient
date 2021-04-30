@@ -9,21 +9,20 @@ def main():
     bienvenida()
     while True:
         try:
-            
-            ##clear()
             imprimirMenu()
             opcion = int(input("Opcion aqui -->"))
             if opcion == 1:
-                iniciarPartida()
+                ip = iniciarPartida()
                 continue
             elif opcion == 2:
                 creditos()
                 continue
             elif opcion == 3:
                 terminar()
+                cerrarConexion()
                 break
             else:
-                opcionNoEncontrada()
+                opcionNoEncontrada(ip)
         except ValueError:
             opcionNoEncontrada()
         except Exception as e:
